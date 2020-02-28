@@ -29,12 +29,20 @@
     <image class="floor-title" src="{{item.floor_title.image_src}}" mode="aspectFill">
     </image>
     <!-- 主体 -->
-    <view class="content" >
+    <view class="content">
       <!-- 大图 -->
       <image src="{{item.product_list[0].image_src}}" class="daimage" mode="aspectFill"></image>
       <view class="rest {{index>0?'xuanze':''}}">
         <image wx:for="{{item.product_list}}" wx:key="index" wx:if="{{index>0}}" src="{{item.image_src}}" mode="aspectFill"></image>
       </view>
     </view>
+  </view>
+  <!-- 返回顶部 -->
+  <view class="fanhui" bindtap="fanhuidb" wx:if="{{inshow}}">
+   顶部
+  </view>
+  <!-- 底部 -->
+  <view class="dibu">
+    我是有底线的 ￣へ￣
   </view>
 </view>

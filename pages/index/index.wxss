@@ -96,14 +96,60 @@
   margin-bottom: 10rpx;
   margin-right: 10rpx;
 }
+
 /*class="{{index>1?'xuanze':''}}"*/
+
 /* .xuanze :nth-child(3){
     width: 273rpx;
 } */
+
 /*选择.floor后面的*/
-.floor + .floor .content image{
-    width: 193rpx;
+
+.floor + .floor .content image {
+  width: 193rpx;
 }
-.floor + .floor .content image:nth-child(3n + 1){
-    width: 259rpx;
+
+.floor + .floor .content image:nth-child(3n + 1) {
+  width: 259rpx;
+}
+
+/* 底部 */
+
+.dibu {
+  height: 200rpx;
+  text-align: center;
+  color: #999;
+  line-height: 180rpx;
+  width: 100%;
+  background: #f4f4f4;
+}
+
+/* 返回 */
+
+.fanhui {
+  position: fixed;
+  right:15rpx;
+  bottom: 25rpx;
+  text-align: center;
+  line-height: 90rpx;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background: #fafafa;
+  font-size: 12px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fanhui::before {
+  content: '';
+  width: 25rpx;
+  height: 25rpx;
+  border-left: 1px #333 solid;
+  border-top: 1px #333 solid;
+  top: 10rpx;
+  transform: rotate(45deg);
+  position: absolute;
 }
