@@ -15,4 +15,12 @@
       </swiper-item>
     </block>
   </swiper>
+  <!-- 商品导航栏 -->
+  <view class="navList">
+    <view class="navList-fils" wx:for="{{navData}}" wx:key="index">
+      <navigator url="{{item.url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}" mode="aspectFill"></image>
+      </navigator>
+    </view>
+  </view>
 </view>
