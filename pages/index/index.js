@@ -10,7 +10,6 @@ Page({
     request({
       url: '/home/swiperdata'
     }).then(res => {
-      console.log(res)
       //解构数据
       const {
         message
