@@ -23,4 +23,18 @@
       </navigator>
     </view>
   </view>
+  <!-- 楼层部分 -->
+  <view class="floor" wx:for="{{floorData}}" wx:key="index">
+    <!-- 标题 mode="aspectFill"-->
+    <image class="floor-title" src="{{item.floor_title.image_src}}" mode="aspectFill">
+    </image>
+    <!-- 主体 -->
+    <view class="content" >
+      <!-- 大图 -->
+      <image src="{{item.product_list[0].image_src}}" class="daimage" mode="aspectFill"></image>
+      <view class="rest {{index>0?'xuanze':''}}">
+        <image wx:for="{{item.product_list}}" wx:key="index" wx:if="{{index>0}}" src="{{item.image_src}}" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
 </view>

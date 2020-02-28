@@ -45,11 +45,65 @@
   height: 180rpx;
 }
 
-.navList-fils navigator{
+.navList-fils navigator {
   width: 100%;
   height: 100%;
 }
+
 .navList-fils image {
   width: 100%;
   height: 100%;
+}
+
+/* 楼层 */
+
+.floor {
+  margin-bottom: 20rpx;
+  /* width:100%; *//* display: flex; *//* justify-content: space-around; */
+}
+
+.floor-title {
+  padding-top: 16rpx;
+  width: 100%;
+  height: 59rpx;
+  background: #f4f4f4;
+  /* flex: 1 */
+}
+
+.floor .content {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  display: flex;
+}
+
+.content .daimage {
+  width: 232rpx;
+  height: 386rpx;
+  margin-right: 10rpx;
+}
+
+.content .rest {
+  /* width: 508rpx; */
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.rest image {
+  width: 235rpx;
+  height: 188rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+}
+/*class="{{index>1?'xuanze':''}}"*/
+/* .xuanze :nth-child(3){
+    width: 273rpx;
+} */
+/*选择.floor后面的*/
+.floor + .floor .content image{
+    width: 193rpx;
+}
+.floor + .floor .content image:nth-child(3n + 1){
+    width: 259rpx;
 }

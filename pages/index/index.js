@@ -6,6 +6,8 @@ Page({
     carousel: []
     //商品导航栏数据
     navData: []
+    //楼层数据
+    floorData: []
   },
   onLoad() {
     //获取轮播图数据
@@ -33,7 +35,6 @@ Page({
       let newData = message.map((v, i) => {
         // 第一个分类
         if (i === 0) {
-          console.log(v)
           v.url = '/pages/category/index'
         }
         return v
@@ -41,6 +42,20 @@ Page({
       //赋值
       this.setData({
         navData: newData
+      })
+    })
+    // 获取楼层部分
+    request({
+      url: '/home/floordata',
+    }).then(res => {
+      console.log(res)
+      //解构数据
+      const {
+        message
+      } = res.data
+      //赋值
+      this.setData({
+        floorData: message
       })
     })
   }
