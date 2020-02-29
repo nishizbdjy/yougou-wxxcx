@@ -1,35 +1,97 @@
 /* pages/category/index.wxss */
-.content{
+
+.content {
   width: 100%;
   position: fixed;
-  top: 98rpx;
+  display: flex;
+  top: 100rpx;
   bottom: 0;
 }
-.content .left{
-  height:100%;
- width: 190rpx;
- overflow: auto;
+
+.content .left {
+  height: 100%;
+  width: 190rpx;
+  overflow: auto;
+  flex-shrink: 0;
 }
 
-.kind{
-  height:100rpx;
+.kind {
+  color: #393939;
+  height: 100rpx;
   text-align: center;
   line-height: 100rpx;
   background: #f4f4f4;
   border-bottom: 1px solid #eee;
 }
-.highlight{
- position: relative;
-  background:#fff;
- color: red;
+
+.highlight {
+  position: relative;
+  background: #fff;
+  color: red;
 }
-.highlight::before{
- position: absolute;
- content: "";
- width: 5rpx;
- top: 50%;
- transform: translateY(-50%);
- left: 0;
- height: 50rpx; 
- background: red;
+
+.highlight::before {
+  position: absolute;
+  content: "";
+  width: 5rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 50rpx;
+  background: red;
+}
+
+/* 右 */
+
+.content .right {
+  overflow: auto;
+  flex: 1;
+}
+
+.chunk {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.right .title {
+  margin: 30rpx 0;
+  /* width: 100%; */
+  flex: 1;
+  color: #e8e8e8;
+  /* flex-shrink: 0; */
+}
+
+.title text {
+  color: #333;
+  margin: 0 20rpx;
+}
+
+.pinbai {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.right navigator {
+  /* background: red; */
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ flex-direction:column;
+  width: 120rpx;
+  height: 180rpx;
+  color: #3e3d3e;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.right navigator image {
+  width: 100%;
+  /* width: 120rpx;
+  height:120rpx; */
+}
+.right navigator text{
+  text-align: center;
 }

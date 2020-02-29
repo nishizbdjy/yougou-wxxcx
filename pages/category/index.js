@@ -1,3 +1,4 @@
+import request from '../../utils/request.js'
 // pages/category/index.js
 Page({
 
@@ -5,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pitch: 0
+    //当前分类左边点击的索引
+    pitch: 0,
+    // 分类商品数据
+    categoryList:[]
   },
   //点击左边分类触发
   xuanzhong(e) {
@@ -22,7 +26,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+     //获取分类
+     request({
+       url:'/categories',
+     }).then(res=>{
+       console.log(res)
+       const { message} =res.data
+       //赋值
+       this.setData({
+         categoryList : message
+       })
+     })
   },
 
   /**
