@@ -127,6 +127,7 @@
 /* 返回 */
 
 .fanhui {
+  opacity: 0.5;
   position: fixed;
   right:15rpx;
   bottom: 25rpx;

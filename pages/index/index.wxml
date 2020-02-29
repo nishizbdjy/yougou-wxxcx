@@ -1,12 +1,8 @@
 <!--index.wxml-->
 <view class="container">
   <!-- 搜索部分 -->
-  <view class="search">
-    <view class="input">
-      <icon type="search" size="20" color="#c7c7c7" />
-      <text>搜索</text>
-    </view>
-  </view>
+  <!-- 使用封装的search组件 -->
+  <search/>
   <!-- 轮播图 -->
   <swiper indicator-dots autoplay circular indicator-color="#e2dada" indicator-active-color="#fff" class="swiper">
     <block wx:for="{{carousel}}" wx:key="index">
@@ -39,7 +35,7 @@
   </view>
   <!-- 返回顶部 -->
   <view class="fanhui" bindtap="fanhuidb" wx:if="{{inshow}}">
-   顶部
+    顶部
   </view>
   <!-- 底部 -->
   <view class="dibu">

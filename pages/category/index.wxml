@@ -1,2 +1,2 @@
-<!--pages/category/index.wxml-->
-<text>分类页</text>
+  <!-- 使用封装的search组件 -->
+  <search/>
