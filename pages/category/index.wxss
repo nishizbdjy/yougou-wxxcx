@@ -1,1 +1,35 @@
 /* pages/category/index.wxss */
+.content{
+  width: 100%;
+  position: fixed;
+  top: 98rpx;
+  bottom: 0;
+}
+.content .left{
+  height:100%;
+ width: 190rpx;
+ overflow: auto;
+}
+
+.kind{
+  height:100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background: #f4f4f4;
+  border-bottom: 1px solid #eee;
+}
+.highlight{
+ position: relative;
+  background:#fff;
+ color: red;
+}
+.highlight::before{
+ position: absolute;
+ content: "";
+ width: 5rpx;
+ top: 50%;
+ transform: translateY(-50%);
+ left: 0;
+ height: 50rpx; 
+ background: red;
+}

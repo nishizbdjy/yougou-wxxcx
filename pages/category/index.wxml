@@ -1,2 +1,9 @@
-  <!-- 使用封装的search组件 -->
-  <search/>
+<!-- 使用封装的search组件 -->
+<search/>
+<!-- 内容结构 -->
+<view class="content">
+  <view class="left">
+    <view class="kind {{pitch==index?'highlight':''}}" wx:for="{{50}}" wx:key="index" bindtap="xuanzhong" data-index="{{index}}">电脑办公</view>
+  </view>
+  <view class="right"></view>
+</view>
