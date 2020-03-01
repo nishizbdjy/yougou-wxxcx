@@ -78,7 +78,7 @@
   /* background: red; */
  display: flex;
  flex-wrap: wrap;
-  width: 120rpx;
+  width: 150rpx;
   height: 180rpx;
   color: #3e3d3e;
   font-size: 12px;
