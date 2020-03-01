@@ -79,7 +79,7 @@
  display: flex;
  flex-wrap: wrap;
   width: 150rpx;
-  height: 180rpx;
+  height: 230rpx;
   color: #3e3d3e;
   font-size: 12px;
   flex-shrink: 0;
