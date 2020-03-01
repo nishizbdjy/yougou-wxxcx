@@ -2,7 +2,7 @@
 <view class="container">
   <!-- 搜索部分 -->
   <!-- 使用封装的search组件 -->
-  <search/>
+  <search/>  
   <!-- 轮播图 -->
   <swiper indicator-dots autoplay circular indicator-color="#e2dada" indicator-active-color="#fff" class="swiper">
     <block wx:for="{{carousel}}" wx:key="index">

@@ -1,0 +1,70 @@
+/* pages/search/index.wxss */
+
+.Search {
+  width: 100%;
+  height: 120rpx;
+  background: #eee;
+  padding: 30rpx 16rpx;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.Search .input {
+  margin-right: 16rpx;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.input input {
+  width: 520rpx;
+  /* background: #fff; */
+}
+
+.Search .button {
+  /* flex:1; */
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 400;
+  color: #333;
+  width: 155rpx;
+  height: 100%;
+  padding: none !important;
+  text-align: center;
+  border: 1px solid #bfbfbf;
+  line-height: 58rpx;
+}
+
+/* 历史搜索 */
+
+.search-history {
+  padding: 0 16rpx;
+}
+
+.history {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.history .lishijl {
+  background: #ddd;
+  padding: 20rpx 40rpx;
+  margin-right: 30rpx;
+  margin-bottom: 18rpx;
+  /* box-sizing: border-box; */
+  height:64rpx;
+  line-height: 64rpx;
+  /* font-size:14px; */
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin: 30rpx 0;
+}

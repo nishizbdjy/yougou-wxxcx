@@ -1,7 +1,9 @@
 <!-- 搜索的公共组件 -->
 <view class="search">
+  <navigator url="/pages/search/index">
   <view class="input">
     <icon type="search" size="20" color="#c7c7c7" />
     <text>搜索</text>
   </view>
+  </navigator>
 </view>
