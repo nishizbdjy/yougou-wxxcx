@@ -39,6 +39,6 @@
   </view>
   <!-- 底部 -->
   <view class="dibu">
-    我是有底线的 ￣へ￣
+    {{hint}}
   </view>
 </view>
