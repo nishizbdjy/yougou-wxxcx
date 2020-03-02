@@ -1,2 +1,11 @@
 <!--pages/goods_list/index.wxml-->
-<search beijingyans="bjys" context="{{keyword}}"/>
+<!-- 输入框自定义组件的使用 -->
+<search beijingyans="bjys" context="{{keyword}}" />
+<!-- 筛选部分 -->
+<view class="screen">
+  <view class="text" wx:for="{{['综合','销量','价格']}}" wx:key="index">
+    {{item}}
+    <text wx:if="{{index==2}}" class="iconfont iconpaixu"></text>
+  </view>
+</view>
+<!-- 列表展示 -->

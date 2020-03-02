@@ -1,1 +1,3 @@
-/**app.wxss**/
+/**app.wxss*公共图标*/
+@import "common/style.wxss";
+@import "common/font.wxss"
