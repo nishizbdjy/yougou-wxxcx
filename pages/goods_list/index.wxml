@@ -10,13 +10,13 @@
 </view>
 <!-- 列表展示 -->   
 <view class="list">
-  <navigator url="" wx:for="{{10}}">
+  <navigator url="" wx:for="{{searchList}}" wx:key="index">
     <image 
-    mode="aspectFill" src="http://image4.suning.cn/uimg/b2c/newcatentries/0070078057-000000000751129836_1_400x400.jpg"></image>
+    mode="aspectFill" src="{{item.goods_small_logo}}"></image>
     <view class="wenzi">
-      <view class="title">紫米ZMI 小米Qc3.0快充梵蒂冈梵蒂冈车充5v2.4双USB智能输出 一拖二手大神专用</view>
+      <view class="title">{{item.goods_name}}</view>
       <view class="price">
-        <text>￥</text>88.00</view>
+        <text>￥</text>{{item.goods_price}}</view>
     </view>
   </navigator>
 </view>

@@ -1,4 +1,6 @@
 // pages/goods_list/index.js
+//引入封装的request
+import request from '../../utils/request.js'
 Page({
 
   /**
@@ -6,7 +8,13 @@ Page({
    */
   data: {
     //当前搜索关键字
-    keyword: ''
+    keyword: '',
+    //页码
+    pagenum:1,
+    //页显示数
+    pagesize:10,
+    //搜索列表数据
+    searchList:[]
   },
 
   /**
@@ -16,6 +24,28 @@ Page({
     //赋值当前关键字
     this.setData({
       keyword: options.keyword
+    })
+    //获取列表数据
+    console.log(this.data.keyword)
+    request({
+      url:'/goods/search',
+      data:{
+        query: this.data.keyword,
+        pagenum: this.data.pagenum,
+        pagesize: this.data.pagesize
+      }
+    }).then(res=>{
+      //赋值
+      const { goods} = res.data.message
+      //将价格添加小数点
+      let newgoods = goods.map((v)=>{
+        v.goods_price = Number(v.goods_price).toFixed(2)
+        return v 
+      })
+      this.setData({
+        searchList: newgoods
+      })
+      console.log(res)
     })
   },
 
