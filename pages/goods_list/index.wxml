@@ -1,2 +1,2 @@
 <!--pages/goods_list/index.wxml-->
-<search beijingyans="bjys" />
+<search beijingyans="bjys" context="{{keyword}}"/>

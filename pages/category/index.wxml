@@ -15,7 +15,7 @@
           </view>
           <view class="pinbai">
             <block wx:for="{{item.children}}" wx:key="index">
-              <navigator>
+              <navigator url="/pages/goods_list/index?keyword={{item.cat_name}}">
                 <!-- lazy-load 图片懒加载 -->
                 <image lazy-load class="logo" src="{{item.cat_icon}}" mode="widthFix"></image>
                 <text>{{item.cat_name}}</text>
