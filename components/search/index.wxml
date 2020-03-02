@@ -1,9 +1,9 @@
 <!-- 搜索的公共组件 -->
-<view class="search">
+<view class="search beijingyans">
   <navigator url="/pages/search/index">
   <view class="input">
     <icon type="search" size="20" color="#c7c7c7" />
-    <text>搜索</text>
+    <text>{{context}}</text>
   </view>
   </navigator>
 </view>

@@ -1,0 +1,11 @@
+/* pages/goods_list/index.wxss */
+
+/*传给input自定义组件的样式*/
+
+.bjys {
+  background: #eee !important;
+}
+
+.bjys view {
+  justify-content: flex-start !important;
+}
