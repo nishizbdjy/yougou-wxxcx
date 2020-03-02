@@ -19,4 +19,9 @@
         <text>￥</text>{{item.goods_price}}</view>
     </view>
   </navigator>
+  <!-- 底部显示 -->
+  <view class="floor">
+  <text wx:if="{{hintState}}">加载中...</text>
+  <text wx:else>再拖都没了o(╥﹏╥)o</text>
+  </view>
 </view>

@@ -10,11 +10,15 @@ Page({
     //当前搜索关键字
     keyword: '',
     //页码
-    pagenum:1,
+    pagenum: 1,
     //页显示数
-    pagesize:10,
+    pagesize: 10,
     //搜索列表数据
-    searchList:[]
+    searchList: [],
+    //底部的提示状态
+    hintState: true,
+    //请求的状态
+    zhuangtai: false,
   },
 
   /**
@@ -27,74 +31,64 @@ Page({
     })
     //获取列表数据
     console.log(this.data.keyword)
-    request({
-      url:'/goods/search',
-      data:{
-        query: this.data.keyword,
-        pagenum: this.data.pagenum,
-        pagesize: this.data.pagesize
-      }
-    }).then(res=>{
-      //赋值
-      const { goods} = res.data.message
-      //将价格添加小数点
-      let newgoods = goods.map((v)=>{
-        v.goods_price = Number(v.goods_price).toFixed(2)
-        return v 
-      })
+    //调用获取列表数据
+    this.searchData()
+  },
+  //页面触底时触发
+  onReachBottom() {
+    //状态为true，说明加载完成后才执行
+    if (this.data.zhuangtai) {
+      //将当前页面加一
       this.setData({
-        searchList: newgoods
+        pagenum: this.data.pagenum + 1
       })
-      console.log(res)
+      //调用获取列表数据
+      this.searchData()
+    }
+  },
+  //封装的请求数据
+  searchData() {
+    //每次请求前将状态设为false
+    this.setData({
+      //将状态赋为false
+      zhuangtai: false
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+    //定时器模拟网络差
+    setTimeout(() => {
+      request({
+        url: '/goods/search',
+        data: {
+          query: this.data.keyword,
+          pagenum: this.data.pagenum,
+          pagesize: this.data.pagesize
+        }
+      }).then(res => {
+        //赋值
+        let {
+          goods,
+          total
+        } = res.data.message
+        //将数据添加到原来数组里面
+        goods = [...this.data.searchList, ...goods]
+        //将价格添加小数点
+        let newgoods = goods.map((v) => {
+          v.goods_price = Number(v.goods_price).toFixed(2)
+          return v
+        })
+        this.setData({
+          searchList: newgoods,
+          //将当前状态设为true
+          zhuangtai: true
+        })
+        //判断长度等于总长，将底部状态设为没数据
+        if (this.data.searchList.length >= total) {
+          this.setData({
+            hintState: false,
+            //将状态赋为false
+            zhuangtai: false
+          })
+        }
+      })
+    }, 2000)
   }
 })
