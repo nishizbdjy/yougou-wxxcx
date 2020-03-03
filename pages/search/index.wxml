@@ -1,31 +1,34 @@
 <view>
-<!-- 输入框 -->
-<view class="Search">
-<view class="input">
-<icon type="search"></icon>
-<input placeholder="请输入你想要的的商品"></input>
-</view>
-<view class=".button">取消</view>
-</view>
-<!-- 历史搜索 -->
-<view class="search-history">
-<view class="title"><text>历史搜索</text><icon type="clear"></icon></view>
-<!-- 历史展示 -->
-<view class="history">
-<!-- 历史 -->
-<view class="lishijl">
-小米
-</view>
-<view class="lishijl">
-小米智能电视
-</view>
-<view class="lishijl">
-小米
-</view>
-<view class="lishijl">
-小米空气净化器
-</view>
-</view>
-</view>
-<!--  -->
+  <!-- 输入框 -->
+  <view class="Search">
+    <view class="input">
+      <icon type="search"></icon>
+      <input placeholder="请输入你想要的的商品" bindinput="inputshijian" value="{{inputValue}}"></input>
+    </view>
+    <view class="button" wx:if="{{inputValue}}" bindtap="cancel">取消</view>
+  </view>
+  <!-- 历史搜索 -->
+  <view class="search-history">
+    <view class="title">
+      <text>历史搜索</text>
+      <icon type="clear"></icon>
+    </view>
+    <!-- 历史展示 -->
+    <view class="history">
+      <!-- 历史 -->
+      <view class="lishijl">
+        小米
+      </view>
+      <view class="lishijl">
+        小米智能电视
+      </view>
+      <view class="lishijl">
+        小米
+      </view>
+      <view class="lishijl">
+        小米空气净化器
+      </view>
+    </view>
+  </view>
+  <!--  -->
 </view>

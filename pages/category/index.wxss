@@ -2,7 +2,9 @@
 
 .content {
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
+  /* 兼容iPhone下的下拉 */
+  position: absolute;
   display: flex;
   top: 100rpx;
   bottom: 0;
@@ -76,8 +78,8 @@
 
 .right navigator {
   /* background: red; */
- display: flex;
- flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   width: 150rpx;
   height: 230rpx;
   color: #3e3d3e;
@@ -90,7 +92,8 @@
   /* width: 120rpx;
   height:120rpx; */
 }
-.right navigator text{
+
+.right navigator text {
   text-align: center;
   margin: 0 auto;
 }
