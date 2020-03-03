@@ -11,7 +11,9 @@ Page({
     //当前请求的状态
     nowState: false,
     //存储上次请求的关键字
-    lastKeyword: ''
+    lastKeyword: '',
+    //推荐列表
+    suggestList: []
   },
 
   /**
@@ -38,7 +40,9 @@ Page({
         console.log(res)
         //将状态设为false
         this.setData({
-          nowState: false
+          nowState: false,
+          //推荐列表赋值
+          suggestList: res.data.message
         })
         //判断当前请求的关键字与当前输入框的值是否一致
         if (this.data.lastKeyword !== this.data.inputValue) {
@@ -57,11 +61,21 @@ Page({
     //搜索建议查询
     this.searchKeyword()
   },
+  //input失焦事件
+  inputshijiao() {
+    //将推荐列表隐藏
+    this.setData({
+      //将推荐列表数据清空
+      suggestList: []
+    })
+  },
   //点击取消按钮事件
   cancel() {
     //将当前输入框绑定的值清空
     this.setData({
       inputValue: '',
+      //将推荐列表数据清空
+      suggestList: []
     })
   }
 })

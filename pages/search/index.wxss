@@ -68,3 +68,32 @@
   font-size: 18px;
   margin: 30rpx 0;
 }
+
+/* 展示搜索推荐 */
+
+.suggest {
+  /* width: 100%; */
+  left: 16rpx;
+  right: 16rpx;
+  height: 50vh;
+  box-sizing: border-box;
+  line-height: 2;
+  font-size: 12px;
+  padding: 0 16rpx;
+  top: 120rpx;
+  position: fixed;
+  background: #fff;
+  color:red;
+  /* box-shadow: 2px 1px 1px 1px rgba(0,0,0,.2) */
+}
+
+.suggest navigator {
+  border-bottom: 1px solid #eee;
+  /*1. 先强制一行内显示文本*/
+  white-space: nowrap;
+  /* （ 默认 normal 自动换行） */
+  /*2. 超出的部分隐藏*/
+   overflow: hidden;
+  /*3. 文字用省略号替代超出的部分*/
+  text-overflow: ellipsis;
+}
