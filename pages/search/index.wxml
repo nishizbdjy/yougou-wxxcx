@@ -3,8 +3,7 @@
   <view class="Search">
     <view class="input">
       <icon type="search"></icon>
-      <input placeholder="请输入你想要的的商品" bindinput="inputshijian" value="{{inputValue}}"
-      bindblur="inputshijiao"></input>
+      <input placeholder="请输入你想要的的商品" bindinput="inputshijian" value="{{inputValue}}" bindblur="inputshijiao" bindconfirm="huicheEnter"></input>
     </view>
     <view class="button" wx:if="{{inputValue}}" bindtap="cancel">取消</view>
   </view>
@@ -12,7 +11,7 @@
   <view class="search-history">
     <view class="title">
       <text>历史搜索</text>
-      <icon type="clear"></icon>
+      <icon type="clear" bindtap="qingkongls"></icon>
     </view>
     <!-- 展示搜索建议 -->
     <view class="suggest" wx:if="{{suggestList.length}}">
@@ -22,18 +21,9 @@
     <!-- 历史展示 -->
     <view class="history">
       <!-- 历史 -->
-      <view class="lishijl">
-        小米
-      </view>
-      <view class="lishijl">
-        小米智能电视
-      </view>
-      <view class="lishijl">
-        小米
-      </view>
-      <view class="lishijl">
-        小米空气净化器
-      </view>
+      <navigator url="/pages/goods_list/index?keyword={{item}}" class="lishijl" wx:for="{{search_history}}" wx:key="index">
+        {{item}}
+      </navigator>
     </view>
   </view>
   <!--  -->
