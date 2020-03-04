@@ -45,5 +45,19 @@ Page({
     this.setData({
       tabindex: e.currentTarget.dataset.index
     })
+  },
+  // 点击展示大图
+  handleimage(e){
+    //当前索引
+    const { index } = e.currentTarget.dataset
+    console.log(e)
+    //将当前图片数据改造
+    let arr = this.data.detailsData.pics.map(v=>{
+      return v.pics_big
+    })
+    wx.previewImage({
+      current: this.data.detailsData.pics[index].pics_big,//当前的http链接
+      urls: arr,//需要预览的图片的http链接列表
+    })
   }
 })

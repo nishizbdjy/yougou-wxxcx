@@ -5,7 +5,7 @@
     <swiper indicator-dots autoplay>
       <block wx:for="{{detailsData.pics}}" wx:key="index">
         <swiper-item>
-          <image mode="aspectFill" src="{{item.pics_big}}"></image>
+          <image mode="aspectFill" bindtap="handleimage" data-index="{{index}}" src="{{item.pics_big}}"></image>
         </swiper-item>
       </block>
     </swiper>
