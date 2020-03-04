@@ -3,18 +3,18 @@
   <!-- 轮播图 -->
   <view class="slideshow">
     <swiper indicator-dots autoplay>
-      <block wx:for="{{image}}" wx:key="index">
+      <block wx:for="{{detailsData.pics}}" wx:key="index">
         <swiper-item>
-          <image mode="aspectFill" src="{{item}}"></image>
+          <image mode="aspectFill" src="{{item.pics_big}}"></image>
         </swiper-item>
       </block>
     </swiper>
   </view>
   <!-- 标题 -->
   <view class="significance">
-    <view class="price">￥279</view>
+    <view class="price">￥{{detailsData.goods_price}}</view>
     <view class="title">
-      <view>初语2019秋装新款潮流女装加绒宽松BF风慵懒衣女套头连帽上衣黑色款</view>
+      <view>{{detailsData.goods_name}}</view>
       <view>
         <icon class="iconfont icon-shoucang"></icon>
         <text>收藏</text>
@@ -23,7 +23,22 @@
     <view>快递：免运费</view>
   </view>
   <!-- 富文本详情 -->
-  <view class="particulars"></view>
+  <view class="tab">
+    <view wx:for="{{['商品介绍','规格参数','售后保障']}}" bindtap="handletab" data-index="{{index}}" class="{{tabindex==index? 'red':''}}" wx:key="index">{{item}}</view>
+  </view>
+  <view class="particulars">
+    <!-- 富文本 -->
+    <rich-text nodes="{{detailsData.goods_introduce}}" wx:if="{{tabindex==0}}"></rich-text>
+    <!-- 参数 -->
+    <view class="table">
+      <view wx:for="{{detailsData.attrs}}" wx:if="{{tabindex==1}}" wx:key="index">{{item.attr_name}} ：
+        <text>{{item.attr_vals}}、</text>
+        <text>{{item.attr_value}}</text>
+      </view>
+    </view>
+    <!-- 售后 -->
+    <view class="after" wx:if="{{tabindex==2}}">暂未开放...</view>
+  </view>
   <!-- 加入购物车 -->
   <view class="floor">
     <view class="floor-left">

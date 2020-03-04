@@ -10,7 +10,7 @@
 </view>
 <!-- 列表展示 -->   
 <view class="list">
-  <navigator url="" wx:for="{{searchList}}" wx:key="index">
+  <navigator url="/pages/goods_detail/index?id={{item.goods_id}}" wx:for="{{searchList}}" wx:key="index">
     <image 
     mode="aspectFill" src="{{item.goods_small_logo}}"></image>
     <view class="wenzi">
