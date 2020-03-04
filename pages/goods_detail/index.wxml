@@ -1,0 +1,46 @@
+<!--pages/goods_detail/index.wxml-->
+<view class="context">
+  <!-- 轮播图 -->
+  <view class="slideshow">
+    <swiper indicator-dots autoplay>
+      <block wx:for="{{image}}" wx:key="index">
+        <swiper-item>
+          <image mode="aspectFill" src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 标题 -->
+  <view class="significance">
+    <view class="price">￥279</view>
+    <view class="title">
+      <view>初语2019秋装新款潮流女装加绒宽松BF风慵懒衣女套头连帽上衣黑色款</view>
+      <view>
+        <icon class="iconfont icon-shoucang"></icon>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view>快递：免运费</view>
+  </view>
+  <!-- 富文本详情 -->
+  <view class="particulars"></view>
+  <!-- 加入购物车 -->
+  <view class="floor">
+    <view class="floor-left">
+      <!--  -->
+      <view>
+        <icon class="iconfont icon-kefu"></icon>
+        <text>联系客服</text>
+      </view>
+      <!--  -->
+      <view>
+        <icon class="iconfont icon-gouwuche"></icon>
+        <text>购物车</text>
+      </view>
+    </view>
+    <view class="floor-right">
+      <view>加入购物车</view>
+      <view>立即购买</view>
+    </view>
+  </view>
+</view>

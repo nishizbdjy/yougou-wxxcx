@@ -70,7 +70,7 @@ Page({
       inputValue: e.detail.value
     })
     //判断有值才搜索
-    if (!this.data.inputValue) {
+    if (!this.data.inputValue.trim()) {
       //将最后一次的数组清空(之前不用是因为它请求了空数据赋值,加了判断有值才搜索,要加上 )
       this.setData({
         suggestList: []
@@ -91,7 +91,7 @@ Page({
   //用户回车事件
   huicheEnter() {
     //有值才执行
-    if (!this.data.inputValue) return
+    if (!this.data.inputValue.trim()) return
     //将新数据添加到获取的数组前面
     this.data.search_history.unshift(this.data.inputValue)
     //数组去重
