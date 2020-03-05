@@ -71,11 +71,14 @@ swiper {
   color: #a4a4a4;
   font-size: 12px;
 }
+
 /* 富文本 */
-.particulars{
+
+.particulars {
   height: 100%;
   margin-bottom: 100rpx;
 }
+
 /* 加入购物车 */
 
 .floor {
@@ -84,7 +87,7 @@ swiper {
   display: flex;
   position: fixed;
   bottom: 0;
-  box-shadow: 1px -1px 1px rgba(190, 187, 187,0.2);
+  box-shadow: 1px -1px 1px rgba(190, 187, 187, 0.2);
 }
 
 .floor view {
@@ -118,58 +121,91 @@ swiper {
   flex: 0.6;
   color: #fff;
 }
-.floor-right view{
-  flex:0.5;
-  height:100%;
-  font-size:14px;
+
+.floor-right view {
+  flex: 0.5;
+  height: 100%;
+  font-size: 14px;
 }
-.floor-right view:first-child{
-  background:#f4b73f;
+
+.floor-right view:first-child {
+  background: #f4b73f;
 }
-.floor-right view:last-child{
-  background:red;
+
+.floor-right view:last-child {
+  background: red;
 }
+
 /* tab栏 */
-.tab{
+
+.tab {
   display: flex;
   /* justify-content: center; */
-  height:50rpx;
-  margin-bottom:10rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
   /* align-items: center; */
 }
-.tab view{
-  flex:0.33;
+
+.tab view {
+  flex: 0.33;
   text-align: center;
 }
-.tab view:nth-child(2){
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
+
+.tab view:nth-child(2) {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
-.red{
+
+.red {
   color: red;
 }
+
 /* 规格 */
-.table{
+
+.table {
   width: 750rpx;
   padding: 16rpx;
   background: #fff;
-  line-height: 2
+  line-height: 2;
 }
-.table view{
-  color: #333333;
-  font-size:14px;
+
+.table view {
+  color: #333;
+  font-size: 14px;
   border-bottom: 1px solid #eee;
 }
-.table view text{
- font-size:12px;
- color: #aaa
+
+.table view text {
+  font-size: 12px;
+  color: #aaa;
 }
+
 /* 售后 */
-.after{
+
+.after {
   width: 100%;
   height: 200rpx;
-  background:#fff;
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 定位的客服btn */
+
+.btn {
+  position: absolute;
+  width: 20%;
+  height: 100rpx;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  opacity: 0;
+  background: red;
+  z-index: 2;
+}
+
+.btn button {
+  height: 100rpx;
+  border-radius: none !important;
 }

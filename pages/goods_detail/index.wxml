@@ -42,6 +42,10 @@
   <!-- 加入购物车 -->
   <view class="floor">
     <view class="floor-left">
+      <!-- 定位的btn客服按钮 -->
+      <view class="btn">
+      <button open-type="contact"></button>
+      </view>
       <!--  -->
       <view>
         <icon class="iconfont icon-kefu"></icon>
