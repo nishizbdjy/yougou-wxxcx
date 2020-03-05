@@ -83,7 +83,9 @@
   top: 120rpx;
   position: fixed;
   background: #fff;
-  color:red;
+  color: red;
+  /*2. 超出的部分隐藏*/
+  overflow: hidden;
   /* box-shadow: 2px 1px 1px 1px rgba(0,0,0,.2) */
 }
 
@@ -91,9 +93,12 @@
   border-bottom: 1px solid #eee;
   /*1. 先强制一行内显示文本*/
   white-space: nowrap;
-  /* （ 默认 normal 自动换行） */
-  /*2. 超出的部分隐藏*/
-   overflow: hidden;
+  /* （ 默认 normal 自动换行） *//*2. 超出的部分隐藏*/
+  overflow: hidden;
   /*3. 文字用省略号替代超出的部分*/
   text-overflow: ellipsis;
+}
+/*整个*/
+.container{
+  min-height: 100vh;
 }

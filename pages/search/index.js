@@ -48,7 +48,7 @@ Page({
           query: this.data.inputValue
         }
       }).then(res => {
-        console.log(res)
+        // console.log(res)
         //将状态设为false
         this.setData({
           nowState: false,
@@ -81,12 +81,27 @@ Page({
     this.searchKeyword()
   },
   //input失焦事件
-  inputshijiao() {
-    //将推荐列表隐藏
-    this.setData({
-      //将推荐列表数据清空
-      suggestList: []
-    })
+  // inputshijiao() {
+  //   //将推荐列表隐藏
+  //   this.setData({
+  //     //将推荐列表数据清空
+  //     suggestList: []
+  //   })
+  // },
+  //点击整个页面的事件
+  zhenge(e) {
+    //判断当前点击的是不是推荐列表页
+    const {
+      tuijianid
+    } = e.target.dataset;
+    //没有就不是推荐页
+    if (tuijianid !== 'zheshituijian') {
+      //将推荐列表隐藏
+      this.setData({
+        //将推荐列表数据清空
+        suggestList: []
+      })
+    }
   },
   //用户回车事件
   huicheEnter() {

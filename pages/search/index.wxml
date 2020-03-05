@@ -1,9 +1,9 @@
-<view>
+<view bindtap="zhenge" class="container">
   <!-- 输入框 -->
   <view class="Search">
     <view class="input">
       <icon type="search"></icon>
-      <input placeholder="请输入你想要的的商品" bindinput="inputshijian" value="{{inputValue}}" bindblur="inputshijiao" bindconfirm="huicheEnter"></input>
+      <input placeholder="请输入你想要的的商品" bindinput="inputshijian" value="{{inputValue}}" bindconfirm="huicheEnter"></input>
     </view>
     <view class="button" wx:if="{{inputValue}}" bindtap="cancel">取消</view>
   </view>
@@ -14,9 +14,8 @@
       <icon type="clear" bindtap="qingkongls"></icon>
     </view>
     <!-- 展示搜索建议 -->
-    <view class="suggest" wx:if="{{suggestList.length}}">
-      <navigator url="" wx:for="{{suggestList}}" wx:key="index">{{index+1}}. {{item.goods_name}}</navigator>
-
+    <view class="suggest" wx:if="{{suggestList.length}}" data-tuijianid="zheshituijian">
+      <navigator url="/pages/goods_detail/index?id={{item.goods_id}}" wx:for="{{suggestList}}" wx:key="index">{{index+1}}. {{item.goods_name}}</navigator>
     </view>
     <!-- 历史展示 -->
     <view class="history">
