@@ -52,7 +52,7 @@
         <text>联系客服</text>
       </view>
       <!--  -->
-      <view>
+      <view bindtap="handlegwc">
         <icon class="iconfont icon-gouwuche"></icon>
         <text>购物车</text>
       </view>

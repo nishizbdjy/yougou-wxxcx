@@ -16,7 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
     const {
       id
     } = options
@@ -27,7 +26,7 @@ Page({
         goods_id: id
       }
     }).then(res => {
-      console.log(res)
+      // console.log(res)
       let {
         message
       } = res.data
@@ -50,7 +49,7 @@ Page({
   handleimage(e){
     //当前索引
     const { index } = e.currentTarget.dataset
-    console.log(e)
+    // console.log(e)
     //将当前图片数据改造
     let arr = this.data.detailsData.pics.map(v=>{
       return v.pics_big
@@ -58,6 +57,12 @@ Page({
     wx.previewImage({
       current: this.data.detailsData.pics[index].pics_big,//当前的http链接
       urls: arr,//需要预览的图片的http链接列表
+    })
+  },
+  //点击跳转到购物车页
+  handlegwc(){
+    wx.switchTab({
+      url:'/pages/cart/index'
     })
   }
 })
