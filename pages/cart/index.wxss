@@ -1,1 +1,198 @@
 /* pages/cart/index.wxss */
+
+/* 地址 */
+
+.site {
+  height: 218rpx;
+  width: 100%;
+  color: #333;
+  background: #fff;
+  padding-bottom: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.site view {
+  padding: 20rpx 16rpx;
+}
+
+.site .name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site .name .username {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site .name .username::after {
+  content: "";
+  display: flex;
+  width: 14rpx;
+  height: 14rpx;
+  border-left: 1.5px solid #999;
+  border-top: 1.5px solid #999;
+  transform: rotate(135deg);
+  margin-left: 30rpx;
+}
+
+.site image {
+  height: 15rpx;
+  width: 100%;
+}
+
+/* 标题 */
+
+.shop {
+  border-top: 20rpx solid #f4f4f4;
+  width: 100%;
+  height: 87rpx;
+  padding: 0 30rpx;
+  line-height: 87rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.shop icon {
+  margin-right: 10rpx;
+}
+
+/* 每一项 */
+
+.item {
+  height: 205rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.item icon {
+  width: 88rpx;
+  text-align: center;
+  line-height: 157rpx;
+}
+
+.item navigator {
+  width: 157rpx;
+  height: 157rpx;
+}
+
+.item navigator image {
+  width: 157rpx;
+  height: 157rpx;
+}
+
+.exhibition {
+  flex: 1;
+  display: flex;
+  color: #333;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.exhibition .title {
+  display: -webkit-box; /*将对象转为弹性盒模型展示*/
+  -webkit-box-orient: vertical; /*设置弹性盒模型子元素的排列方式*/
+  -webkit-line-clamp: 2; /*限制文本行数*/
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+
+.typeface {
+  flex: 1;
+  padding: 0 16rpx;
+  line-height: 1.5;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.typeface .anniu {
+  display: flex;
+}
+
+.anniu input {
+  width: 30px;
+  text-align: center;
+}
+
+.anniu view {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border: 1.5px solid #666;
+}
+
+.price>text {
+  color: red;
+  font-size: 12px;
+}
+
+.price .jiage {
+  font-size: 16px;
+}
+
+/* 底部 */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 3px #ddd;
+}
+
+.footer .left {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.left icon {
+  margin: 0 20rpx;
+}
+
+.footer .center {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.center view:first-child text:last-child {
+  color: red;
+}
+
+.center view text:nth-child(2) {
+  font-size: 12px;
+  color: red;
+}
+
+.center view:last-child {
+  font-size: 12px;
+  color: #a4a3a4;
+}
+
+.footer .right {
+  width: 30%;
+  background: red;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
