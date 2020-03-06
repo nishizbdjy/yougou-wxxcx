@@ -24,20 +24,20 @@
     <text>优购生活馆</text>
   </view>
   <!-- 每一项 -->
-  <view class="item">
+  <view class="item" wx:for="{{purchase}}" wx:key="index">
     <icon type="success" size="18" color="red"></icon>
     <view class="exhibition">
-      <navigator url="">
-        <image mode="aspectFill" src="https://img13.360buyimg.com/jdcms/s300x300_jfs/t1/96544/40/4747/86371/5de8beadE38b005e8/a2900445d2c95b7b.jpg.webp"></image>
+      <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
+        <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
       </navigator>
       <view class="typeface">
-        <view class="title">小米（MI）小米电视4 2GB+8GB 55英寸四核64位烦得很时光飞逝的防抖高处理器睿智</view>
+        <view class="title">{{item.goods_name}}</view>
         <view class="price">
-          <text>￥<text class="jiage">236.00</text></text>
+          <text>￥<text class="jiage">{{item.goods_price}}</text></text>
           <view class="anniu">
             <view>-</view>
-            <input value="2"></input>
-            <view>+</view>
+            <input value="{{item.number}}"></input>
+            <view bindtap="numberjiajian" data-index="{{index}}">+</view>
           </view>
         </view>
       </view>

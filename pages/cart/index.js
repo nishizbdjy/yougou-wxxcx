@@ -6,7 +6,9 @@ Page({
    */
   data: {
     //地址信息
-    usersite: {}
+    usersite: {},
+    //本地购物车数据
+    purchase:[]
   },
 
   /**
@@ -42,7 +44,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+   //从本地获取到购物车数据
+    this.setData({
+      purchase: wx.getStorageSync('goods')||[]
+    })
   },
-
+  //数量的加
+  numberjiajian(e){
+  //当前点击的索引
+    const { index } = e.currentTarget.dataset
+    this.data.purchase[index].number+=1
+    console.log(this.data.purchase)
+    //改变数量
+    this.setData({
+      purchase: this.data.purchase
+    })
+  }
 })
