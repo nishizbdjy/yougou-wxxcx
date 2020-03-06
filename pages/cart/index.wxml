@@ -1,12 +1,20 @@
 <view class="content">
   <!-- 收货地址部分 -->
-  <view class="site">
+  <view class="site" wx:if="{{usersite.userName&&usersite.telNumber}}">
     <view class="name">
-      <text>收货人：苏打绿</text>
-      <text class="username">17674725607</text>
+      <text>收货人：{{usersite.userName}}</text>
+      <text class="username">{{usersite.telNumber}}</text>
     </view>
     <view class="dizhi">
-      收货地址：湖南省衡阳市祁东县砖塘镇永安村40组
+      {{usersite.provinceName+usersite.cityName+usersite.countyName+usersite.detailInfo}}
+    </view>
+    <image mode="aspectFill" src="../../images/cart_border@2x.png"></image>
+  </view>
+  <!-- 未授权地址部分 -->
+  <view class="site" style="height:inherit" bindtap="huoqudizhi" wx:if="{{!(usersite.userName&&usersite.telNumber)}}">
+    <view class="name">
+      <text>获取收货地址</text>
+      <text class="username"></text>
     </view>
     <image mode="aspectFill" src="../../images/cart_border@2x.png"></image>
   </view>
