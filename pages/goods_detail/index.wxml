@@ -58,7 +58,7 @@
       </view>
     </view>
     <view class="floor-right">
-      <view>加入购物车</view>
+      <view bindtap="jiarugwc">加入购物车</view>
       <view>立即购买</view>
     </view>
   </view>
