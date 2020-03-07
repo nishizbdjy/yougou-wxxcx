@@ -36,7 +36,7 @@
           <text>￥<text class="jiage">{{item.goods_price}}</text></text>
           <view class="anniu">
             <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{-1}}">-</view>
-            <input value="{{item.number}}" bindblur="shijiaoshijian" data-index="{{index}}"></input>
+            <input value="{{item.number}}" type="number" bindblur="shijiaoshijian" data-index="{{index}}"></input>
             <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{1}}">+</view>
           </view>
         </view>
