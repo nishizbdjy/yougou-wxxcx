@@ -154,6 +154,7 @@
   display: flex;
   align-items: center;
   box-shadow: 1px 1px 3px #ddd;
+  background: #fff;
 }
 
 .footer .left {
