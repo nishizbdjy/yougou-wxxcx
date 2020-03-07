@@ -1,3 +1,8 @@
 /**app.wxss*公共图标*/
 @import "common/style.wxss";
-@import "common/font.wxss"
+@import "common/font.wxss";
+
+/*全局样式*/
+.tab-quanju{
+  padding-bottom: 48px;
+}

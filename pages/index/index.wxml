@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container tab-quanju">
   <!-- 搜索部分 -->
   <!-- 使用封装的search组件 -->
   <search/>  

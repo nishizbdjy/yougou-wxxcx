@@ -1,4 +1,4 @@
-<view class="content">
+<view class="content tab-quanju ">
   <!-- 收货地址部分 -->
   <view class="site" wx:if="{{usersite.userName&&usersite.telNumber}}">
     <view class="name">
@@ -23,26 +23,29 @@
     <icon class="iconfont icon-dianpu"></icon>
     <text>优购生活馆</text>
   </view>
-  <!-- 每一项 -->
-  <view class="item" wx:for="{{purchase}}" wx:key="index">
-    <icon type="success" size="18" bindtap="xuanzhongzt" data-index="{{index}}" color="{{item.select?'red':'gray'}}"></icon>
-    <view class="exhibition">
-      <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
-        <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
-      </navigator>
-      <view class="typeface">
-        <view class="title">{{item.goods_name}}</view>
-        <view class="price">
-          <text>￥<text class="jiage">{{item.goods_price}}</text></text>
-          <view class="anniu">
-            <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{-1}}">-</view>
-            <input value="{{item.number}}" type="number" bindblur="shijiaoshijian" data-index="{{index}}"></input>
-            <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{1}}">+</view>
+  <view class="bottom">
+    <!-- 每一项 -->
+    <view class="item" wx:for="{{purchase}}" wx:key="index">
+      <icon type="success" size="18" bindtap="xuanzhongzt" data-index="{{index}}" color="{{item.select?'red':'gray'}}"></icon>
+      <view class="exhibition">
+        <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
+          <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
+        </navigator>
+        <view class="typeface">
+          <view class="title">{{item.goods_name}}</view>
+          <view class="price">
+            <text>￥<text class="jiage">{{item.goods_price}}</text></text>
+            <view class="anniu">
+              <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{-1}}">-</view>
+              <input value="{{item.number}}" type="number" bindblur="shijiaoshijian" data-index="{{index}}"></input>
+              <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{1}}">+</view>
+            </view>
           </view>
         </view>
       </view>
     </view>
   </view>
+
   <!-- 底部 -->
   <view class="footer">
     <view class="left">

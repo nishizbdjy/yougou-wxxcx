@@ -11,7 +11,16 @@ Page({
     //返回顶部的显示
     inshow: false
     //底部加载提示
-    hint:'加载中'
+    hint: '加载中'
+  },
+  //配置自定义tab页
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
   },
   onLoad() {
     //获取轮播图数据
@@ -63,7 +72,7 @@ Page({
         //数据都加载完毕将提示信息跟换
         hint: '我是有底线的 ￣へ￣'
       })
-      
+
     })
   },
   // 返回顶部
@@ -86,7 +95,7 @@ Page({
       inshow = false
     }
     //判断值是否改变，没改变就return
-    if(this.data.inshow === inshow) return
+    if (this.data.inshow === inshow) return
     //改变值
     this.setData({
       inshow: inshow

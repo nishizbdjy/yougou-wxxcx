@@ -7,7 +7,7 @@
   position: absolute;
   display: flex;
   top: 100rpx;
-  bottom: 0;
+  bottom: 48px;
 }
 
 .content .left {

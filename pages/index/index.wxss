@@ -130,7 +130,7 @@
   opacity: 0.5;
   position: fixed;
   right:15rpx;
-  bottom: 25rpx;
+  bottom: 125rpx;
   text-align: center;
   line-height: 90rpx;
   width: 90rpx;

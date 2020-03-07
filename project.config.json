@@ -47,15 +47,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": [
-				{
-					"id": 0,
-					"name": "pages/cart/index",
-					"pathName": "pages/cart/index",
-					"query": "id=47869",
-					"scene": null
-				}
-			]
+			"list": []
 		}
 	}
 }

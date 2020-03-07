@@ -48,6 +48,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    //配置自定义tab页
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
+    ///////////////
     //从本地获取到购物车数据
     this.setData({
       purchase: wx.getStorageSync('goods') || []
