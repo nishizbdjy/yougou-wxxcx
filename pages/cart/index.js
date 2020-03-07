@@ -12,7 +12,7 @@ Page({
     //总价格
     sumPrice: 0,
     //全选的状态
-    allPitch:true,
+    allPitch: true,
   },
 
   /**
@@ -160,15 +160,31 @@ Page({
     this.judgeAll()
   },
   //判断当前的全选状态
-  judgeAll(){
+  judgeAll() {
     //循环数组  全部选时会返回 false
-    let zhuangtai = this.data.purchase.some(v=>{
-       return !v.select
+    let zhuangtai = this.data.purchase.some(v => {
+      return !v.select
     })
     //赋值
     this.setData({
-      allPitch:!zhuangtai
+      allPitch: !zhuangtai
     })
     console.log(this.data.allPitch)
+  },
+  //点击全选
+  quanxuan() {
+    //全选取反
+    this.data.allPitch = !this.data.allPitch
+    //将单选设为全选
+    this.data.purchase.forEach(v => {
+      v.select = this.data.allPitch
+    })
+    //赋值
+    this.setData({
+      allPitch: this.data.allPitch,
+      purchase: this.data.purchase
+    })
+    //计算总价 修改本地
+    this.calculatesum()
   }
 })

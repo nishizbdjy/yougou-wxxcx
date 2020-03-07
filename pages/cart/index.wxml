@@ -46,7 +46,7 @@
   <!-- 底部 -->
   <view class="footer">
     <view class="left">
-      <icon type="success" size="18" color="{{allPitch?'red':'gray'}}"></icon>
+      <icon bindtap="quanxuan" type="success" size="18" color="{{allPitch?'red':'gray'}}"></icon>
       <text>全选</text>
     </view>
     <view class="center">
