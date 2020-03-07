@@ -75,6 +75,8 @@ Page({
             this.setData({
               purchase: this.data.purchase
             })
+            //计算总价格
+            this.calculatesum()
           } else if (res.cancel) {
             this.data.purchase[index].number = 1
             //改变数量
@@ -108,5 +110,25 @@ Page({
     })
     //修改本地数据
     wx.setStorageSync('goods', this.data.purchase)
+  },
+  //用户输入失焦事件
+  shijiaoshijian(e){
+   //当前的索引
+    const { index } = e.currentTarget.dataset
+    //当前的value值
+    const { value } = e.detail
+    //判断值是否合法
+    if (value.lenght !== 0 && Math.floor(Number(value)) && Number(value)>=1){
+      this.data.purchase[index].number = Number(value)
+    }else{
+      //不合法 =1
+      this.data.purchase[index].number = 1
+    }
+    //赋值
+    this.setData({
+      purchase :this.data.purchase
+    })
+    //计算总价 修改本地
+    this.calculatesum()
   }
 })
