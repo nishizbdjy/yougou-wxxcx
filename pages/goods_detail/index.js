@@ -94,7 +94,8 @@ Page({
         goods_name: this.data.detailsData.goods_name, //标题
         goods_price: this.data.detailsData.goods_price, //价格
         goods_small_logo: this.data.detailsData.goods_small_logo, //图片
-        number: 1
+        number: 1,
+        select:true//商品默认的状态
       })
       //提示用户
       //提示用户

@@ -25,7 +25,7 @@
   </view>
   <!-- 每一项 -->
   <view class="item" wx:for="{{purchase}}" wx:key="index">
-    <icon type="success" size="18" color="red"></icon>
+    <icon type="success" size="18" bindtap="xuanzhongzt" data-index="{{index}}" color="{{item.select?'red':'gray'}}"></icon>
     <view class="exhibition">
       <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
         <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
@@ -46,7 +46,7 @@
   <!-- 底部 -->
   <view class="footer">
     <view class="left">
-      <icon type="success" size="18" color="red"></icon>
+      <icon type="success" size="18" color="{{allPitch?'red':'gray'}}"></icon>
       <text>全选</text>
     </view>
     <view class="center">

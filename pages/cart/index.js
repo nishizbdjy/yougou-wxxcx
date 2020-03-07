@@ -11,6 +11,8 @@ Page({
     purchase: [],
     //总价格
     sumPrice: 0,
+    //全选的状态
+    allPitch:true,
   },
 
   /**
@@ -52,6 +54,8 @@ Page({
     })
     //计算总价格
     this.calculatesum()
+    //判断当前的全选状态
+    this.judgeAll()
   },
   //数量的加
   numberjiajian(e) {
@@ -102,7 +106,10 @@ Page({
     let price = 0
     //将数组循环
     this.data.purchase.forEach(v => {
-      price += Number(v.goods_price) * v.number
+      //判断状态为选中才计算
+      if (v.select) {
+        price += Number(v.goods_price) * v.number
+      }
     })
     //赋值
     this.setData({
@@ -112,23 +119,56 @@ Page({
     wx.setStorageSync('goods', this.data.purchase)
   },
   //用户输入失焦事件
-  shijiaoshijian(e){
-   //当前的索引
-    const { index } = e.currentTarget.dataset
+  shijiaoshijian(e) {
+    //当前的索引
+    const {
+      index
+    } = e.currentTarget.dataset
     //当前的value值
-    const { value } = e.detail
+    const {
+      value
+    } = e.detail
     //判断值是否合法
-    if (value.lenght !== 0 && Math.floor(Number(value)) && Number(value)>=1){
+    if (value.lenght !== 0 && Math.floor(Number(value)) && Number(value) >= 1) {
       this.data.purchase[index].number = Number(value)
-    }else{
+    } else {
       //不合法 =1
       this.data.purchase[index].number = 1
     }
     //赋值
     this.setData({
-      purchase :this.data.purchase
+      purchase: this.data.purchase
     })
     //计算总价 修改本地
     this.calculatesum()
+  },
+  //用户点击单选是
+  xuanzhongzt(e) {
+    //当前的索引
+    const {
+      index
+    } = e.currentTarget.dataset
+    //将当前的状态取反
+    this.data.purchase[index].select = !this.data.purchase[index].select
+    //赋值
+    this.setData({
+      purchase: this.data.purchase
+    })
+    //计算总价 修改本地
+    this.calculatesum()
+    //判断当前的全选装态
+    this.judgeAll()
+  },
+  //判断当前的全选状态
+  judgeAll(){
+    //循环数组  全部选时会返回 false
+    let zhuangtai = this.data.purchase.some(v=>{
+       return !v.select
+    })
+    //赋值
+    this.setData({
+      allPitch:!zhuangtai
+    })
+    console.log(this.data.allPitch)
   }
 })
