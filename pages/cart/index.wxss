@@ -67,9 +67,11 @@
   display: flex;
   align-items: center;
 }
-.item:last-child{
-  margin-bottom:135rpx; 
+
+.item:last-child {
+  margin-bottom: 135rpx;
 }
+
 .item icon {
   width: 88rpx;
   text-align: center;
@@ -198,4 +200,35 @@
   text-align: center;
   color: #fff;
   font-size: 14px;
+}
+
+/* 没有时显示的 */
+
+.none {
+  height: 100vh;
+  width: 750rpx;
+  background: #f5f5f5;
+  padding-top: 100rpx;
+}
+
+.none .tishimy {
+  width: 400rpx;
+  height: 400rpx;
+  margin: 0 auto;
+  display: flex;
+  font-size:14px;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-around;
+align-items: center; 
+}
+
+.tishimy image {
+  width: 185rpx;
+  height: 185rpx;
+  /* flex:1; */
+}
+.tishimy navigator{
+  color: red;
+  text-decoration: underline ;
 }

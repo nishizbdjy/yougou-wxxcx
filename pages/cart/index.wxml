@@ -1,4 +1,4 @@
-<view class="content tab-quanju ">
+<view class="content tab-quanju" wx:if="{{purchase.length!==0}}">
   <!-- 收货地址部分 -->
   <view class="site" wx:if="{{usersite.userName&&usersite.telNumber}}">
     <view class="name">
@@ -64,4 +64,14 @@
       结算
     </view>
   </view>
+</view>
+<!-- 没有商品是显示的 -->
+<view class="none" wx:else>
+ <view class="tishimy">
+ <image mode="aspectFill" src="../../images/cart_empty@2x.png"></image>
+ <view>你还没有添加任何商品去添加吧</view>
+ <navigator  open-type="switchTab" url="/pages/category/index">
+  去开心
+ </navigator>
+ </view>
 </view>
