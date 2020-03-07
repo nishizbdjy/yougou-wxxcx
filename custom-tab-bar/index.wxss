@@ -36,3 +36,20 @@
 .tab-bar-item cover-view {
   font-size: 10px;
 }
+/* 数量定位 */
+.shuliang{
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  right:40rpx;
+  width:40rpx;
+  height:40rpx;
+  background: red;
+}
+/* 父盒子 */
+.dingwei{
+  position: relative;
+}
