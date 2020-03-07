@@ -35,9 +35,9 @@
         <view class="price">
           <text>￥<text class="jiage">{{item.goods_price}}</text></text>
           <view class="anniu">
-            <view>-</view>
+            <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{-1}}">-</view>
             <input value="{{item.number}}"></input>
-            <view bindtap="numberjiajian" data-index="{{index}}">+</view>
+            <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{1}}">+</view>
           </view>
         </view>
       </view>
@@ -53,7 +53,7 @@
       <view>
         <text>合计：</text>
         <text>￥</text>
-        <text>14110.00</text>
+        <text>{{sumPrice}}</text>
       </view>
       <view>包含运费</view>
     </view>

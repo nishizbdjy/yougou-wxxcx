@@ -8,7 +8,9 @@ Page({
     //地址信息
     usersite: {},
     //本地购物车数据
-    purchase:[]
+    purchase: [],
+    //总价格
+    sumPrice: 0,
   },
 
   /**
@@ -44,20 +46,67 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-   //从本地获取到购物车数据
+    //从本地获取到购物车数据
     this.setData({
-      purchase: wx.getStorageSync('goods')||[]
+      purchase: wx.getStorageSync('goods') || []
     })
+    //计算总价格
+    this.calculatesum()
   },
   //数量的加
-  numberjiajian(e){
-  //当前点击的索引
-    const { index } = e.currentTarget.dataset
-    this.data.purchase[index].number+=1
-    console.log(this.data.purchase)
+  numberjiajian(e) {
+    //当前点击的索引
+    const {
+      index,
+      jiajian
+    } = e.currentTarget.dataset
+    this.data.purchase[index].number += jiajian
+    //判断当前的数量是否<=0是就将当前的商品删除
+    if (this.data.purchase[index].number <= 0) {
+      //提示用户
+      wx.showModal({
+        title: '提示',
+        content: '你确认要删除该商品吗',
+        success: (res) => {
+          if (res.confirm) {
+            this.data.purchase.splice(index, 1)
+            //回调函数此时外面的赋值已经完成了，所以在赋值
+            //改变数量
+            this.setData({
+              purchase: this.data.purchase
+            })
+          } else if (res.cancel) {
+            this.data.purchase[index].number = 1
+            //改变数量
+            this.setData({
+              purchase: this.data.purchase
+            })
+            //计算总价格
+            this.calculatesum()
+          }
+        }
+      })
+    }
     //改变数量
     this.setData({
       purchase: this.data.purchase
     })
+    //计算总价格
+    this.calculatesum()
+  },
+  //计算总价格
+  calculatesum() {
+    //价格变量
+    let price = 0
+    //将数组循环
+    this.data.purchase.forEach(v => {
+      price += Number(v.goods_price) * v.number
+    })
+    //赋值
+    this.setData({
+      sumPrice: price
+    })
+    //修改本地数据
+    wx.setStorageSync('goods', this.data.purchase)
   }
 })
