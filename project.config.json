@@ -16,7 +16,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.2",
-	"appid": "wx0c7df0b746eb795f",
+	"appid": "wxfb52f2d7b2f6123a",
 	"projectname": "heimayougou-wxxcx",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -50,8 +50,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/order_enter/index",
-					"pathName": "pages/order_enter/index",
+					"name": "pages/pay/index",
+					"pathName": "pages/pay/index",
 					"query": "id=47869",
 					"scene": null
 				}

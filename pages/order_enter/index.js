@@ -15,7 +15,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面加载
-   */
+   */ 
   onLoad: function(options) {
     //从本地获取地址
     this.setData({
@@ -73,4 +73,19 @@ Page({
     //修改本地数据
     wx.setStorageSync('goods', this.data.purchase)
   },
+  //点击支付
+  payment(){
+    console.log()
+    //判断本地是否有token，及地址
+    //获取本地token
+   const token= wx.getStorageSync('token')
+   if(token){
+    
+   }else{
+     //没有,跳转到授权页
+     wx.navigateTo({
+       url:'/pages/pay/index'
+     })
+   }
+  }
 })

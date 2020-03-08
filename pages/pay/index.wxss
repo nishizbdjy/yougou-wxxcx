@@ -1,0 +1,19 @@
+/* pages/pay/index.wxss */
+.content{
+  padding-top: 250rpx; 
+  width:450rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.content image{
+  width: 100rpx;
+  height:100rpx;
+  border-radius: 50px;
+}
+.content button{
+  width:250rpx !important;
+}

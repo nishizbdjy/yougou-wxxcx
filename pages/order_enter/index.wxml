@@ -45,6 +45,6 @@
   <!-- 底部 -->
   <view class="dibu">
   <view><text>合计：</text><text>￥</text>{{sumPrice}}</view>
-  <button type="primary">立即支付</button>
+  <button type="primary" bindtap="payment">立即支付</button>
   </view>
 </view>
