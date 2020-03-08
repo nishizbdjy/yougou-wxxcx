@@ -88,7 +88,6 @@ Page({
           title: '请选择收货地址'
         })
       } else {
-        console.log(111)
         const {
           sumPrice,
           usersite,
@@ -116,7 +115,58 @@ Page({
             goods //商品数据
           }
         }).then(res => {
-          console.log(res)
+          wx.showToast({
+            title: '创建订单成功'
+          })
+          //订单编号
+          const {
+            order_number
+          } = res.data.message
+          //获取支付参数
+          request({
+            url: '/my/orders/req_unifiedorder',
+            method: "post",
+            header: {
+              Authorization: token
+            },
+            data: {
+              order_number
+            }
+          }).then(res => {
+            //支付参数
+            const {
+              pay
+            } = res.data.message
+            //支付成功的回调(自己写的)
+            pay.success=((res)=>{
+              // console.log(res)
+              wx.showToast({
+                title: '支付成功'
+              })
+              // //将本地购物车数据中的本条数据删除
+              // const purchase= this.data.purchase.map(v=>{
+              //   //勾选的说明买了
+              //   if(v.select===false){
+              //     return {v}
+              //   }
+              // })
+              //赋值到本地
+              // wx.setStorageSync('goods', purchase)
+              //跳转到购物车页
+              wx.switchTab({
+                url:'/pages/cart/index'
+              })
+            })
+            //支付失败的回调(自己写的)
+            pay.fail =((res)=>{
+              wx.showToast({
+                title: '取消支付'
+              })
+            })
+            //调用支付
+            wx.requestPayment(pay)
+          })
+
         })
       }
     } else {
