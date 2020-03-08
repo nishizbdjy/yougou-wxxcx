@@ -131,7 +131,7 @@ Page({
     })
     //赋值
     this.setData({
-      sumPrice: price
+      sumPrice: price.toFixed(2)
     })
     //修改本地数据
     wx.setStorageSync('goods', this.data.purchase)
@@ -204,5 +204,11 @@ Page({
     })
     //计算总价 修改本地
     this.calculatesum()
+  },
+  //点击结算跳转到确认页
+  skipAffirmpage(){
+    wx.navigateTo({
+      url :'/pages/order_enter/index'
+    })
   }
 })

@@ -1,4 +1,4 @@
-<view class="content tab-quanju" wx:if="{{purchase.length!==0}}">
+<view class="content">
   <!-- 收货地址部分 -->
   <view class="site" wx:if="{{usersite.userName&&usersite.telNumber}}">
     <view class="name">
@@ -25,8 +25,7 @@
   </view>
   <view class="bottom">
     <!-- 每一项 -->
-    <view class="item" wx:for="{{purchase}}" wx:key="index">
-      <icon type="success" size="18" bindtap="xuanzhongzt" data-index="{{index}}" color="{{item.select?'red':'gray'}}"></icon>
+    <view class="item" wx:for="{{purchase}}" wx:key="index" wx:if="{{item.select}}">
       <view class="exhibition">
         <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
           <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
@@ -36,42 +35,16 @@
           <view class="price">
             <text>￥<text class="jiage">{{item.goods_price}}</text></text>
             <view class="anniu">
-              <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{-1}}">-</view>
-              <input value="{{item.number}}" type="number" bindblur="shijiaoshijian" data-index="{{index}}"></input>
-              <view bindtap="numberjiajian" data-index="{{index}}" data-jiajian="{{1}}">+</view>
+            <text>数量*{{item.number}}</text>
             </view>
           </view>
         </view>
       </view>
     </view>
   </view>
-
   <!-- 底部 -->
-  <view class="footer">
-    <view class="left">
-      <icon bindtap="quanxuan" type="success" size="18" color="{{allPitch?'red':'gray'}}"></icon>
-      <text>全选</text>
-    </view>
-    <view class="center">
-      <view>
-        <text>合计：</text>
-        <text>￥</text>
-        <text>{{sumPrice}}</text>
-      </view>
-      <view>包含运费</view>
-    </view>
-    <view class="right" bindtap="skipAffirmpage">
-      结算
-    </view>
+  <view class="dibu">
+  <view><text>合计：</text><text>￥</text>{{sumPrice}}</view>
+  <button type="primary">立即支付</button>
   </view>
-</view>
-<!-- 没有商品是显示的 -->
-<view class="none" wx:else>
- <view class="tishimy">
- <image mode="aspectFill" src="../../images/cart_empty@2x.png"></image>
- <view>你还没有添加任何商品去添加吧</view>
- <navigator  open-type="switchTab" url="/pages/category/index">
-  去开心
- </navigator>
- </view>
 </view>
