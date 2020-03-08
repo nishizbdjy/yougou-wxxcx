@@ -91,6 +91,14 @@ Page({
             })
             //计算总价格
             this.calculatesum()
+            //刷新购物车数量
+            if (typeof this.getTabBar === 'function' &&
+              this.getTabBar()) {
+              this.getTabBar().setData({
+                //刷新当前购物车数量
+                quantity: (wx.getStorageSync('goods') || []).length
+              })
+            }
           } else if (res.cancel) {
             this.data.purchase[index].number = 1
             //改变数量

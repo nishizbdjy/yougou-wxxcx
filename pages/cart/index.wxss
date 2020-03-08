@@ -149,6 +149,7 @@
 
 .footer {
   position: fixed;
+  z-index:2;
   bottom: 48px;
   left: 0;
   height: 100rpx;
