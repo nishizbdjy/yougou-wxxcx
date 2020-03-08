@@ -30,7 +30,6 @@ Page({
   },
   //授权
   handleUserInfo(e){
-    console.log(e)
     //判断是否成功授权
     const { errMsg, encryptedData, rawData, iv, signature,} =e.detail
     if (errMsg =='getUserInfo:ok'){
@@ -51,7 +50,6 @@ Page({
                 code:res.code
               }
             }).then(res=>{
-              console.log(res)
               //存储token到本地
               if(res.data.meta.msg=='登录成功'){
                 wx.setStorageSync('token', res.data.message.token)

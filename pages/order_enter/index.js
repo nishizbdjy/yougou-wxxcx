@@ -1,4 +1,5 @@
 // pages/cart/index.js
+import request from '../../utils/request.js'
 Page({
 
   /**
@@ -15,7 +16,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面加载
-   */ 
+   */
   onLoad: function(options) {
     //从本地获取地址
     this.setData({
@@ -74,18 +75,55 @@ Page({
     wx.setStorageSync('goods', this.data.purchase)
   },
   //点击支付
-  payment(){
-    console.log()
+  payment() {
     //判断本地是否有token，及地址
     //获取本地token
-   const token= wx.getStorageSync('token')
-   if(token){
-    
-   }else{
-     //没有,跳转到授权页
-     wx.navigateTo({
-       url:'/pages/pay/index'
-     })
-   }
+    const token = wx.getStorageSync('token')
+    if (token) {
+      //判断本地是否有地址
+      const site = wx.getStorageSync('site')
+      if (!site) {
+        //提示用户请选择收货地址
+        wx.showToast({
+          title: '请选择收货地址'
+        })
+      } else {
+        console.log(111)
+        const {
+          sumPrice,
+          usersite,
+          purchase
+        } = this.data
+        //改造商品数据
+        const goods = purchase.map(v => {
+          return {
+            goods_id: v.goods_id,
+            goods_number: v.number,
+            goods_price: v.goods_price
+          }
+        })
+        //创建订单
+        request({
+          url: '/my/orders/create',
+          method: "POST",
+          header: {
+            Authorization: token
+          },
+          data: {
+            order_price: sumPrice, //价格
+            consignee_addr: usersite.userName + usersite.telNumber + usersite.provinceName +
+              usersite.cityName + usersite.countyName + usersite.detailInfo, //地址
+            goods //商品数据
+          }
+        }).then(res => {
+          console.log(res)
+        })
+      }
+    } else {
+      //没有,跳转到授权页
+      wx.navigateTo({
+        url: '/pages/pay/index'
+      })
+    }
   }
 })
