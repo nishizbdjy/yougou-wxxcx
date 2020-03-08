@@ -5,6 +5,6 @@
     <cover-image src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></cover-image>
     <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
     <!-- 数量定位 -->
-    <cover-view class="shuliang" wx:if="{{index==2}}">0</cover-view>
+    <cover-view class="shuliang" wx:if="{{index==2}}">{{quantity}}</cover-view>
   </cover-view>
 </cover-view>

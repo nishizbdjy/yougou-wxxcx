@@ -27,7 +27,9 @@ Component({
         "iconPath": "../images/icon_me@3x.png",
         "selectedIconPath": "../images/icon_me_active@3x.png"
       }
-    ]
+    ],
+    //当前购物车数量
+    quantity: (wx.getStorageSync('goods')||[]).length
   },
   attached() {},
   methods: {

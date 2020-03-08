@@ -52,7 +52,9 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 2
+        selected: 2,
+        //刷新当前购物车数量
+        quantity: (wx.getStorageSync('goods') || []).length
       })
     }
     ///////////////
