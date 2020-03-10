@@ -1,1 +1,161 @@
 /* pages/personal/index.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+/* 用户展示部分 */
+
+.user-info {
+  width: 750rpx;
+  height: 400rpx;
+  background: #ff2d4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.user-info icon {
+  font-size: 18px;
+}
+
+.touxiang {
+  width: 410rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+}
+
+.touxiang>.image {
+  width: 165rpx;
+  height: 165rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+}
+
+/* 店铺 */
+
+.store {
+  height: 120rpx;
+  width: 720rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  color: #999;
+  background: #fff;
+  margin-top: -20rpx;
+  margin-bottom: 20rpx;
+}
+
+.store view {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 订单部分 */
+
+.indent {
+  height: 255rpx;
+  width: 720rpx;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.indent .wode {
+  padding: 25rpx;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.function {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.function view {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.function view icon {
+  color: red;
+  font-size: 28px;
+}
+
+.function view text {
+  font-size: 14px;
+}
+
+/* 地址 */
+
+.site {
+  color: #333;
+  height: 87rpx;
+  width: 720rpx;
+  background: #fff;
+  margin: 20rpx auto;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  justify-content: space-between;
+  /* padding-left: 20rpx; */
+}
+
+.site text {
+  margin-left: 20rpx;
+}
+
+.jiantou::after {
+  content: "";
+  display: block;
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  transform: rotate(135deg);
+  margin-right: 20rpx;
+}
+
+.lianxi {
+  /* padding-left:20rpx; */
+  width: 720rpx;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lianxi view {
+  padding: 0 20rpx;
+  height: 85rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #ddd; 
+}
+.lianxi view:last-child{
+  border:none;
+}
+.lianxi view:last-child::after {
+  content: "";
+  display: block;
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  transform: rotate(135deg);
+}

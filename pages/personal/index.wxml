@@ -1,2 +1,71 @@
-<!--pages/personal/index.wxml-->
-<text>个人中心页</text>
+<view class="content">
+  <!-- 用户 -->
+  <view class="user-info">
+    <view class="touxiang">
+      <icon class="iconfont icon-icon_set_up"></icon>
+      <view class="image">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <icon class="iconfont icon-dakaihuihua"></icon>
+    </view>
+    <open-data type="userNickName"></open-data>
+
+  </view>
+  <!-- 店铺 -->
+  <view class="store">
+    <view wx:for="{{['收藏的店铺','收藏的商品','关注的商品','我的足迹']}}">
+      <text>0</text>
+      <text>{{item}}</text>
+    </view>
+    <!-- <view>
+      <text>0</text>
+      <text>收藏的商品</text>
+    </view>
+    <view>
+      <text>0</text>
+      <text>关注的商品</text>
+    </view>
+    <view>
+      <text>0</text>
+      <text>我的足迹</text>
+    </view> -->
+  </view>
+  <!-- 我的订单 -->
+  <view class="indent">
+    <view class="wode">
+      我的订单
+    </view>
+    <view class="function">
+      <view>
+        <icon class="iconfont icon-daifukuan"></icon>
+        <text>待付款</text>
+      </view>
+      <view>
+        <icon class="iconfont icon-icon3"></icon>
+        <text>待收货</text>
+      </view>
+      <view>
+        <icon class="iconfont icon-icon5"></icon>
+        <text>退款/退货</text>
+      </view>
+      <view>
+        <icon class="iconfont icon-icon_order"></icon>
+        <text>全部订单</text>
+      </view>
+    </view>
+  </view>
+  <!-- 地址 -->
+  <view class="site jiantou" bindtap="shouhuosite">
+    <text> 收货地址管理</text>
+  </view>
+  <!-- 练习客服 -->
+  <view class="lianxi">
+  <view bindtap="lianxikf">
+    <text>联系客服</text>
+    <text>400-618-4000</text>
+  </view>
+    <view>
+    <text>意见反馈</text>
+  </view>
+  </view>
+</view>

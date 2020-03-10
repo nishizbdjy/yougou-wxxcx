@@ -50,9 +50,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/order_enter/index",
-					"pathName": "pages/order_enter/index",
-					"query": "id=47869",
+					"name": "pages/personal/index",
+					"pathName": "pages/personal/index",
+					"query": "",
 					"scene": null
 				}
 			]
