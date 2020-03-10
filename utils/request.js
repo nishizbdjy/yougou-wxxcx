@@ -7,6 +7,11 @@ const request = (conifg) => {
   }
   //返回Promise
   return new Promise((resolve, reject) => {
+    //加载中显示提示用户
+    wx.showLoading({
+      title:'加载中',
+      mask:true,
+    })
     //将用户传递的数据对象
     wx.request({
       ...conifg,
@@ -22,6 +27,8 @@ const request = (conifg) => {
       complete: (data) => {
         //调用错误执行函数，传入数据
         request.errors(data)
+        //取消显示提示
+        wx.hideLoading()
       }
     })
   })
