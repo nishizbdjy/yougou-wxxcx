@@ -138,33 +138,31 @@ Page({
               pay
             } = res.data.message
             //支付成功的回调(自己写的)
-            pay.success=((res)=>{
+            pay.success = ((res) => {
               // console.log(res)
               wx.showToast({
                 title: '支付成功'
               })
-              // //将本地购物车数据中的本条数据删除
-              // const purchase= this.data.purchase.map(v=>{
-              //   //勾选的说明买了
-              //   if(v.select===false){
-              //     return {v}
-              //   }
-              // })
-              //赋值到本地
-              // wx.setStorageSync('goods', purchase)
               //跳转到购物车页
               wx.switchTab({
-                url:'/pages/cart/index'
+                url: '/pages/cart/index'
               })
             })
             //支付失败的回调(自己写的)
-            pay.fail =((res)=>{
+            pay.fail = ((res) => {
               wx.showToast({
                 title: '取消支付'
               })
             })
             //调用支付
             wx.requestPayment(pay)
+            //将本地购物车数据中的本条数据删除
+            const purchase = this.data.purchase.filter(v => {
+              //勾选的说明买了
+              return !v.select
+            })
+            //赋值到本地
+            wx.setStorageSync('goods', purchase)
           })
 
         })
